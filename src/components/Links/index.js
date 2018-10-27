@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 const NavLinks = () => (
   <nav>
-    <Link to="/?id=123">Inline</Link>
-    <Link to={{ pathname: '/', search: 'id=456' }}>Object</Link>
+    <Link to="/">Home</Link>
+    <Link to="/about">About</Link>
+    <Link to="/contact/xxx/xxx/xx">Contact</Link>
   </nav>
 );
 

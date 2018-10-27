@@ -1,22 +1,16 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Links from '../Links';
 
 const Root = () => (
   <Router>
     <Fragment>
       <Links />
-      <Route
-        path="/"
-        render={({ match, location }) => (
-          <div>
-            <p>root</p>
-            <p>{JSON.stringify(match)}</p>
-            <p>{JSON.stringify(location)}</p>
-            <p>{new URLSearchParams(location.search).get('id')}</p>
-          </div>
-        )}
-      />
+      <Switch>
+        <Route exact path="/" render={() => <h1>Home</h1>} />
+        <Route path="/about" render={() => <h1>About</h1>} />
+        <Route render={() => <h1>Page not found</h1>} />
+      </Switch>
     </Fragment>
   </Router>
 );
