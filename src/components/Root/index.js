@@ -24,6 +24,21 @@ const Root = () => (
           </h1>
         )}
       />
+      <Route
+        path="/:a(\d{2}-\d{2}-\d{4}):b(\.[a-z]+)"
+        render={({ match }) => (
+          <h1>
+            paramA:
+            {' '}
+            {match.params.a}
+            <br />
+            paramB:
+            {' '}
+            {match.params.b}
+            <br />
+          </h1>
+        )}
+      />
     </Fragment>
   </Router>
 );
