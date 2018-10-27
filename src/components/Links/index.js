@@ -1,12 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Links = () => (
+const isActiveFunc = (match, location) => {
+  console.log(match, location);
+  return match;
+};
+
+const NavLinks = () => (
   <nav>
-    <Link to="/">Home</Link>
-    <Link to={{ pathname: '/about' }}>About</Link>
-    <Link replace to="/contact">Contact</Link>
+    <NavLink exact activeClassName="active" to="/">
+      Home
+    </NavLink>
+    <NavLink activeStyle={{ color: 'green' }} to="/about">
+      About
+    </NavLink>
+    <NavLink isActive={isActiveFunc} activeClassName="active" to="/contact">
+      Contact
+    </NavLink>
   </nav>
 );
 
-export default Links;
+export default NavLinks;
