@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Content from '../Content';
-import Header from '../Header';
 import Links from '../Links';
+import Home from '../../scenes/Home';
+import Menu from '../../scenes/Menu';
 
 const Root = () => (
   <Router>
     <Fragment>
       <Links />
-      <Header />
-      <Content />
+      <Route exact path="/" component={Home} />
+      <Route path="/menu" component={Menu} />
     </Fragment>
   </Router>
 );
