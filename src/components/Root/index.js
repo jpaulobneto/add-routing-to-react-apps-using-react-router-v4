@@ -9,6 +9,21 @@ const Root = () => (
       <Route exact path="/" render={() => <h1>Home</h1>} />
       <Route path="/about" render={() => <h1>About</h1>} />
       <Route path="/contact" render={() => <h1>Contact</h1>} />
+      <Route
+        path="/:page?/:subpage?"
+        render={({ match }) => (
+          <h1>
+            PAGE:
+            {' '}
+            {match.params.page || 'Home'}
+            <br />
+            SUBPAGE:
+            {' '}
+            {match.params.subpage}
+            <br />
+          </h1>
+        )}
+      />
     </Fragment>
   </Router>
 );
