@@ -9,3 +9,7 @@ a, a:visited {
 a.active {
   color: red;
 }
+
+p {
+  margin: 0 0 10px;
+}
