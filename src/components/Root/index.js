@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from '../../scenes/Home';
 
-const Root = () => <h1>Hello World</h1>;
+const Root = () => (
+  <Router>
+    <Fragment>
+      <Route exact path="/" component={Home} />
+      {/* <Route path="/about" render={() => <h1>About</h1>} /> */}
+      <Route path="/about">{({ match }) => match && <h1>About</h1>}</Route>
+    </Fragment>
+  </Router>
+);
 
 export default Root;
