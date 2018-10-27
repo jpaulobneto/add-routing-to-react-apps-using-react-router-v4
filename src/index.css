@@ -13,3 +13,11 @@ a.active {
 p {
   margin: 0 0 10px;
 }
+
+.header {
+  border: 1px solid blue;
+}
+
+.content {
+  border: 1px solid red;
+}
